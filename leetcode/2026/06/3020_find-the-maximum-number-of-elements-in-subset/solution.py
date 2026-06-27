@@ -74,3 +74,79 @@ class Solution:
                     ans = max(ans, 2 * i + 1)
 
         return ans
+
+
+if __name__ == "__main__":
+    sol = Solution()
+
+    # Example 1 from problem statement
+    nums1 = [5, 4, 1, 2, 2]
+    result1 = sol.maximumLength(nums1)
+    expected1 = 3
+    print(f"Example 1: nums={nums1}, result={result1}, expected={expected1} "
+          f"-> {'PASS' if result1 == expected1 else 'FAIL'}")
+
+    # Example 2 from problem statement
+    nums2 = [1, 3, 2, 4]
+    result2 = sol.maximumLength(nums2)
+    expected2 = 1
+    print(f"Example 2: nums={nums2}, result={result2}, expected={expected2} "
+          f"-> {'PASS' if result2 == expected2 else 'FAIL'}")
+
+    # Additional tests
+    # Test 3: Full chain 2 -> 4 -> 16 -> 256
+    nums3 = [2, 2, 4, 4, 16, 16, 256, 1]
+    result3 = sol.maximumLength(nums3)
+    expected3 = 7  # [2, 4, 16, 256, 16, 4, 2]
+    print(f"Test 3: nums={nums3}, result={result3}, expected={expected3} "
+          f"-> {'PASS' if result3 == expected3 else 'FAIL'}")
+
+    # Test 4: Only single elements, no chains possible
+    nums4 = [10, 20, 30]
+    result4 = sol.maximumLength(nums4)
+    expected4 = 1
+    print(f"Test 4: nums={nums4}, result={result4}, expected={expected4} "
+          f"-> {'PASS' if result4 == expected4 else 'FAIL'}")
+
+    # Test 5: Five ones (odd count)
+    nums5 = [1, 1, 1, 1, 1]
+    result5 = sol.maximumLength(nums5)
+    expected5 = 5
+    print(f"Test 5: nums={nums5}, result={result5}, expected={expected5} "
+          f"-> {'PASS' if result5 == expected5 else 'FAIL'}")
+
+    # Test 6: Four ones (even count -> use f-1)
+    nums6 = [1, 1, 1, 1]
+    result6 = sol.maximumLength(nums6)
+    expected6 = 3
+    print(f"Test 6: nums={nums6}, result={result6}, expected={expected6} "
+          f"-> {'PASS' if result6 == expected6 else 'FAIL'}")
+
+    # Test 7: Mixed chains, choose the longer one
+    nums7 = [2, 2, 4, 4, 16, 3, 3, 9]
+    result7 = sol.maximumLength(nums7)
+    expected7 = 5  # [2, 4, 16, 4, 2] is longer than [3, 9, 3]
+    print(f"Test 7: nums={nums7}, result={result7}, expected={expected7} "
+          f"-> {'PASS' if result7 == expected7 else 'FAIL'}")
+
+    # Test 8: Chain from base 3
+    nums8 = [3, 3, 9, 9, 81, 81]
+    result8 = sol.maximumLength(nums8)
+    expected8 = 5  # [3, 9, 81, 9, 3]
+    print(f"Test 8: nums={nums8}, result={result8}, expected={expected8} "
+          f"-> {'PASS' if result8 == expected8 else 'FAIL'}")
+
+    # Test 9: Multiple copies of base value but no next value
+    nums9 = [2, 2, 2, 2]
+    result9 = sol.maximumLength(nums9)
+    expected9 = 1  # Cannot form [2,4,2] without 4
+    print(f"Test 9: nums={nums9}, result={result9}, expected={expected9} "
+          f"-> {'PASS' if result9 == expected9 else 'FAIL'}")
+
+    # Test 10: Edge case - two copies, next exists with one copy
+    nums10 = [2, 2, 4]
+    result10 = sol.maximumLength(nums10)
+    expected10 = 3  # [2, 4, 2]
+    print(f"Test 10: nums={nums10}, result={result10}, expected={expected10} "
+          f"-> {'PASS' if result10 == expected10 else 'FAIL'}")
+
