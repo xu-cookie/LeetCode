@@ -1,0 +1,24 @@
+完成今天的 LeetCode 每日一题，步骤如下：
+
+1. 获取今日每日一题（优先读取缓存文件，失败则使用 API）：
+   - 首先尝试读取 .claude/today_problem.json，如果文件存在且日期是今天，直接使用其中的数据
+   - 如果缓存文件不存在或日期不对，使用 API：
+     curl -s -X POST 'https://leetcode.cn/graphql/' -H 'Content-Type: application/json' -d '{"query":"{todayRecord{date question{questionFrontendId titleSlug translatedTitle title difficulty questionId content codeSnippets{lang langSlug code}}}}","variables":{}}'
+   - 记录：questionFrontendId、titleSlug、translatedTitle、difficulty、questionId（内部ID）
+
+2. 用 Java 语言编写解答代码，保存到 leetcode/editor/cn/[前端题号]中文标题.java
+   - 代码文件命名格式参考已有文件，如 [2095]删除链表的中间节点.java
+   - 需要包含完整的注释（问题描述、解题思路、复杂度分析）
+   - 确保代码可直接通过 LeetCode 提交（包含合适的类名和方法签名）
+
+3. 将题目描述的 .md 文件保存到 leetcode/editor/cn/doc/content/[前端题号]中文标题.md
+
+4. 提交解答到 LeetCode（使用内部 questionId）：
+   python .claude/submit_via_python.py --slug 'titleSlug' --qid '内部questionId' --file 'leetcode/editor/cn/[前端题号]中文标题.java'
+
+5. 执行 git 命令完成提交和推送（必须执行，不可跳过）：
+   git add leetcode/editor/cn/[前端题号]中文标题.java leetcode/editor/cn/doc/content/[前端题号]中文标题.md
+   git commit -m '每日一题: [前端题号] 中文标题'
+   git push
+
+6. 确认 git push 成功，没有报错。

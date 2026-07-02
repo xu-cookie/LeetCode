@@ -1,5 +1,6 @@
 """
 Fetch LeetCode Daily Challenge and save to JSON file.
+Tries leetcode.com first, then falls back to leetcode.cn.
 Usage: python .claude/fetch_daily.py
 Output: .claude/today_problem.json
 """
@@ -8,12 +9,81 @@ import urllib.request
 import urllib.error
 import os
 import sys
+from datetime import datetime
 
-def fetch_daily_problem():
-    """Fetch today's LeetCode daily challenge from leetcode.cn GraphQL API."""
+TODAY = datetime.now().strftime("%Y-%m-%d")
 
-    # GraphQL query for today's problem (full details in one query)
-    # Uses todayRecord (leetcode.cn) instead of activeDailyCodingChallengeQuestion (leetcode.com)
+def graphql_call(url, query, variables=None, timeout=30):
+    """Make a GraphQL API call."""
+    body = {"query": query}
+    if variables:
+        body["variables"] = variables
+    headers = {
+        "Content-Type": "application/json",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+    }
+    data = json.dumps(body).encode("utf-8")
+    req = urllib.request.Request(url, data=data, headers=headers, method="POST")
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def fetch_leetcode_com():
+    """Fetch daily challenge from leetcode.com (English, updates midnight UTC)."""
+    query = """
+    query questionOfToday {
+        activeDailyCodingChallengeQuestion {
+            date
+            link
+            question {
+                questionFrontendId
+                title
+                titleSlug
+                difficulty
+                content
+                codeSnippets {
+                    lang
+                    langSlug
+                    code
+                }
+            }
+        }
+    }
+    """
+    try:
+        result = graphql_call("https://leetcode.com/graphql", query)
+        challenge = result["data"]["activeDailyCodingChallengeQuestion"]
+        if not challenge or not challenge.get("question"):
+            return None
+        q = challenge["question"]
+
+        java_code = ""
+        python_code = ""
+        for s in q.get("codeSnippets", []):
+            if s.get("langSlug") == "java":
+                java_code = s.get("code", "")
+            elif s.get("langSlug") == "python3":
+                python_code = s.get("code", "")
+
+        return {
+            "date": challenge.get("date", TODAY),
+            "questionFrontendId": q["questionFrontendId"],
+            "titleSlug": q["titleSlug"],
+            "title": q["title"],
+            "translatedTitle": "",
+            "difficulty": q["difficulty"],
+            "content": q.get("content", ""),
+            "javaCode": java_code,
+            "pythonCode": python_code,
+            "source": "leetcode.com"
+        }
+    except Exception as e:
+        print(f"  [leetcode.com] Error: {e}")
+        return None
+
+
+def fetch_leetcode_cn():
+    """Fetch daily challenge from leetcode.cn (Chinese)."""
     query = """
     query todayRecord {
         todayRecord {
@@ -35,49 +105,26 @@ def fetch_daily_problem():
         }
     }
     """
-
-    body = json.dumps({"query": query, "variables": {}}).encode("utf-8")
-
-    headers = {
-        "Content-Type": "application/json",
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-    }
-
-    url = "https://leetcode.cn/graphql/"
-
     try:
-        req = urllib.request.Request(url, data=body, headers=headers, method="POST")
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            result = json.loads(resp.read().decode("utf-8"))
-    except urllib.error.HTTPError as e:
-        error_body = e.read().decode("utf-8")
-        print(f"HTTP Error {e.code}: {error_body}")
-        return None
-    except Exception as e:
-        print(f"Request failed: {e}")
-        return None
-
-    # Parse the response
-    try:
+        result = graphql_call("https://leetcode.cn/graphql/", query)
         records = result.get("data", {}).get("todayRecord", [])
         if not records:
             print("Error: No todayRecord in response")
-            print(f"Raw response: {json.dumps(result, indent=2, ensure_ascii=False)[:500]}")
             return None
 
-        challenge = records[0]  # todayRecord is a list, take first entry
+        challenge = records[0]
         question = challenge.get("question", {})
 
-        # Find Java code snippet
         java_code = ""
-        code_snippets = question.get("codeSnippets", [])
-        for snippet in code_snippets:
+        python_code = ""
+        for snippet in question.get("codeSnippets", []):
             if snippet.get("langSlug") == "java":
                 java_code = snippet.get("code", "")
-                break
+            elif snippet.get("langSlug") == "python3":
+                python_code = snippet.get("code", "")
 
-        problem = {
-            "date": challenge.get("date", ""),
+        return {
+            "date": challenge.get("date", TODAY),
             "questionFrontendId": question.get("questionFrontendId", ""),
             "titleSlug": question.get("titleSlug", ""),
             "translatedTitle": question.get("translatedTitle", ""),
@@ -86,25 +133,56 @@ def fetch_daily_problem():
             "questionId": question.get("questionId", ""),
             "content": question.get("content", ""),
             "javaCode": java_code,
+            "pythonCode": python_code,
+            "source": "leetcode.cn"
         }
+    except Exception as e:
+        print(f"  [leetcode.cn] Error: {e}")
+        return None
 
+
+def fetch_daily_problem():
+    """Try leetcode.com first, fallback to leetcode.cn."""
+    print(f"Fetching LeetCode daily challenge... (target date: {TODAY})")
+
+    # Try leetcode.com first (usually updates at midnight UTC, earlier availability)
+    print("  Trying leetcode.com...")
+    problem = fetch_leetcode_com()
+    if problem:
+        problem_date = problem.get("date", "")
+        if problem_date == TODAY:
+            print(f"  Got today's problem from leetcode.com!")
+            return problem
+        else:
+            print(f"  leetcode.com returned date '{problem_date}', not today '{TODAY}'")
+
+    # Fallback to leetcode.cn
+    print("  Trying leetcode.cn...")
+    problem = fetch_leetcode_cn()
+    if problem:
+        problem_date = problem.get("date", "")
+        if problem_date == TODAY:
+            print(f"  Got today's problem from leetcode.cn!")
+            return problem
+        else:
+            print(f"  leetcode.cn returned date '{problem_date}', not today '{TODAY}'")
+
+    # If neither returned today's problem, return whatever we got (stale is better than nothing)
+    if problem:
+        print(f"  WARNING: Returning problem dated {problem_date} (not today)")
         return problem
 
-    except Exception as e:
-        print(f"Error parsing response: {e}")
-        print(f"Raw response: {json.dumps(result, indent=2, ensure_ascii=False)[:500]}")
-        return None
+    return None
 
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     output_file = os.path.join(script_dir, "today_problem.json")
 
-    print("Fetching LeetCode daily challenge from leetcode.cn...")
     problem = fetch_daily_problem()
 
     if problem is None:
-        print("FAILED to fetch daily problem.")
+        print("FAILED to fetch daily problem from both sources.")
         sys.exit(1)
 
     # Save to JSON file
@@ -112,12 +190,15 @@ def main():
         json.dump(problem, f, indent=2, ensure_ascii=False)
 
     print(f"\nSuccess! Problem saved to: {output_file}")
-    print(f"  Problem #{problem['questionFrontendId']}: {problem['translatedTitle']} ({problem['title']})")
+    title_display = problem.get("translatedTitle") or problem.get("title", "N/A")
+    print(f"  Problem #{problem['questionFrontendId']}: {title_display}")
     print(f"  Difficulty: {problem['difficulty']}")
     print(f"  Slug: {problem['titleSlug']}")
-    print(f"  Internal ID: {problem['questionId']}")
+    print(f"  Source: {problem.get('source', 'unknown')}")
+    if problem.get("questionId"):
+        print(f"  Internal ID: {problem['questionId']}")
 
-    # Print compact JSON for capture
+    # Print compact JSON for capture by parent process
     print("\n___PROBLEM_JSON_START___")
     print(json.dumps(problem, ensure_ascii=False))
     print("___PROBLEM_JSON_END___")

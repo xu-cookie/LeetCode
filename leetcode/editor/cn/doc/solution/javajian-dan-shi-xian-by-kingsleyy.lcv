@@ -1,0 +1,31 @@
+### 解题思路
+
+执行用时 :1 ms, 在所有 Java 提交中击败了99.98%的用户
+内存消耗 :39.7 MB, 在所有 Java 提交中击败了77.23%的用户
+代码有注释  应该能直接看懂吧
+
+### 代码
+
+* java
+
+```java
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int i, count = 0;
+        //相同就跳过，不同就插入后面的那个值
+        for(i = 1 ; i < nums.length - 1; i++){
+            if(nums[count] == nums[i])
+                continue;
+            else
+                nums[++count] = nums[i];
+        }
+
+        //如果最后一项和倒数第二项不相同，则插入最后一项
+        if(i == nums.length - 1 && nums[i - 1] != nums[i] ){
+            nums[++count] = nums[i];
+        }
+        return count + 1;
+    }
+}
+```
+

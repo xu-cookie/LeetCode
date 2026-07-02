@@ -1,0 +1,34 @@
+﻿2026-06-15 19:53:23 - [Submit] 閿欒: 鎵句笉鍒颁唬鐮佹枃浠?D:\LeetCode\leetcode\editor\cn\[2095]删除链表的中间节点.java
+2026-06-15 19:54:02 - [Submit] 閿欒: 鎵句笉鍒颁唬鐮佹枃浠?D:\LeetCode\leetcode\editor\cn\[2095]删除链表的中间节点.java
+2026-06-15 19:54:44 - [Submit] 姝ｅ湪鎻愪氦 delete-the-middle-node-of-a-linked-list (ID: 2095)...
+2026-06-15 19:54:44 - [Submit] 鎻愪氦澶辫触: {"error": "User is not authenticated"}
+2026-06-15 19:55:29 - [Submit] 閿欒: 鎵句笉鍒颁唬鐮佹枃浠?D:\LeetCode\leetcode\editor\cn\[13]罗马数字转整数.java
+2026-06-15 19:56:28 - [Submit] 姝ｅ湪鎻愪氦 delete-the-middle-node-of-a-linked-list (ID: 2095)...
+2026-06-15 19:56:28 - [Submit] 鎻愪氦澶辫触: {"error": "User is not authenticated"}
+2026-06-15 19:59:12 - [Submit] 结果: Compile Error | 通过: None/None | 耗时: N/A | 内存: N/A
+2026-06-15 20:00:09 - [Submit] 结果: Accepted | 通过: 70/70 | 耗时: 4 ms | 内存: 198.3 MB
+2026-06-15 20:04:02 - [JWT] OK - expires in 29 days (2026-07-15)
+powershell.exe : Out-File : 文件“D:\LeetCode\.claude\leetcode_daily.log”正由另一进程使用，因此该进程无法访问此文件。
+所在位置 D:\LeetCode\.claude\schedule_daily.ps1:8 字符: 5
++     & powershell -ExecutionPolicy Bypass -File $jwtChecker 2>&1 | Out ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Out-File : 文件“D...用，因此该进程无法访问此文件。:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+所在位置 D:\LeetCode\.claude\check_jwt_expiry.ps1:55 字符: 117
++ ... 'yyyy-MM-dd')))" | Out-File -Append -FilePath $logFile -Encoding UTF8
++                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Out-File], IOException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+ 
+2026-06-16 11:32:36 - Scheduling: LeetCode_20260616 @ 10:03
+schtasks : 警告: 因为 /ST 早于当前的时间，任务可能无法运行。
+所在位置 D:\LeetCode\.claude\schedule_daily.ps1:25 字符: 1
++ schtasks /create /tn $taskName /tr "powershell -ExecutionPolicy Bypas ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (警告: 因为 /ST 早于当前的时间，任务可能无法运行。:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+成功: 成功创建计划任务 "LeetCode_20260616"。
+2026-06-16 11:32:36 - Task LeetCode_20260616 created
+2026-06-16 11:32:36 - Schedule complete
