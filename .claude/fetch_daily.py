@@ -199,8 +199,15 @@ def main():
         print(f"  Internal ID: {problem['questionId']}")
 
     # Print compact JSON for capture by parent process
+    # Use ascii-only to avoid GBK encoding errors on Windows
     print("\n___PROBLEM_JSON_START___")
-    print(json.dumps(problem, ensure_ascii=False))
+    try:
+        print(json.dumps(problem, ensure_ascii=False))
+    except UnicodeEncodeError:
+        # Fallback: strip non-ASCII characters to avoid GBK issues
+        safe = json.dumps(problem, ensure_ascii=False)
+        safe = safe.encode('ascii', errors='replace').decode('ascii')
+        print(safe)
     print("___PROBLEM_JSON_END___")
 
     sys.exit(0)
