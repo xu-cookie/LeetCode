@@ -1,6 +1,7 @@
 [2026-06-16 21:24:59] Random delay: 1710s
 [2026-06-16 21:27:50] Random delay: 1326s
 [2026-07-03 15:30:00] Solved #3620 Network Recovery Pathways (Hard) - Binary Search + DAG DP + Topological Sort
+[2026-07-06] Solved #1288 Remove Covered Intervals (Medium) - Sorting + Greedy One-Pass
 [2026-06-16 21:49:56] Pulling latest from remote...
 [2026-06-16 22:05:59] Random delay: 1407s
 [2026-06-16 22:29:26] Pulling latest from remote...
@@ -282,3 +283,67 @@
 [2026-07-03 22:01:18] Today: [3620]  (Hard)
 [2026-07-03 22:01:18] Fetch OK
 [2026-07-03 22:01:18] Starting Claude Code...
+[2026-07-03 22:03:58] Claude exit code: 0
+[2026-07-03 22:03:58] SUCCESS
+[2026-07-03 22:04:02] PUSH OK
+[2026-07-03 22:04:02] === Daily task ended ===
+[2026-07-04 09:29:41] === Daily task started ===
+[2026-07-04 09:29:41] Random delay: 4999s
+[2026-07-04 09:29:45] === Daily task started ===
+[2026-07-04 09:29:45] SKIP: Already running (lock age: 0min)
+[2026-07-04 09:48:41] === Daily task started ===
+[2026-07-04 09:48:41] SKIP: Already running (lock age: 19min)
+[2026-07-04 09:48:42] === Daily task started ===
+[2026-07-04 09:48:42] SKIP: Already running (lock age: 19min)
+[2026-07-04 11:42:26] === Daily task started ===
+[2026-07-04 11:42:26] WARNING: Stale lock (02:12:45.2642561h), overriding
+[2026-07-04 11:42:27] Random delay: 4227s
+[2026-07-04 11:42:27] === Daily task started ===
+[2026-07-04 11:42:27] SKIP: Already running (lock age: 0min)
+[2026-07-04 12:52:54] Pulling latest from remote...
+[2026-07-04 12:52:59] Pull OK (exit: 0)
+[2026-07-04 12:52:59] Fetching daily problem via Python...
+[2026-07-04 12:53:01] Fetch exit: 0
+[2026-07-04 12:53:01] Today: [2492]  (Medium)
+[2026-07-04 12:53:01] Fetch OK
+[2026-07-04 12:53:01] Starting Claude Code...
+[2026-07-04 12:55:12] Solved #2492 Minimum Score of a Path Between Two Cities (Medium) - DFS on Connected Component (min edge in component)
+[2026-07-04 12:55:12] Claude exit code: 0
+[2026-07-04 12:55:12] SUCCESS
+[2026-07-04 12:55:16] PUSH OK
+[2026-07-04 12:55:16] === Daily task ended ===
+[2026-07-06 12:22:36] === Daily task started ===
+[2026-07-06 12:22:36] Random delay: 6916s
+[2026-07-06 12:22:38] === Daily task started ===
+[2026-07-06 12:22:38] SKIP: Already running (lock age: 0min)
+[2026-07-06 14:17:52] Pulling latest from remote...
+[2026-07-06 14:17:58] Pull OK (exit: 0)
+[2026-07-06 14:17:58] Fetching daily problem via Python...
+[2026-07-06 14:18:00] Fetch exit: 0
+[2026-07-06 14:18:00] Today: [1288]  (Medium)
+[2026-07-06 14:18:00] Fetch OK
+[2026-07-06 14:18:00] Starting Claude Code...
+[2026-07-06] Solved #1288 Remove Covered Intervals (Medium) - Sorting + Greedy One-Pass
+[2026-07-06 14:19:47] Claude exit code: 0
+[2026-07-06 14:19:47] SUCCESS
+[2026-07-06 14:19:53] PUSH OK (NOTE: reflog shows no actual push - may have been a false positive)
+[2026-07-06 14:19:53] === Daily task ended ===
+[2026-07-06 14:22:00] === Claude agent re-invoked (Bash unavailable) ===
+[2026-07-06 14:22:00] Re-verified solution: #1288 Remove Covered Intervals (Medium) - Sorting + Greedy One-Pass
+[2026-07-06 14:22:00] Solution files exist: leetcode/2026/07/1288_remove-covered-intervals/solution.java + README.md
+[2026-07-06 14:22:00] WARNING: Git reflog confirms NO commit for today. Files are untracked.
+[2026-07-06 14:22:00] ACTION: git add leetcode/2026/07/1288_remove-covered-intervals/ && git commit -m "feat: 自动完成 LeetCode Remove Covered Intervals - 2026-07-06" && git push origin master
+[2026-07-07 08:44:59] === Daily task started ===
+[2026-07-07 08:44:59] Random delay: 2907s
+[2026-07-07 08:45:00] === Daily task started ===
+[2026-07-07 08:45:00] SKIP: Already running (lock age: 0min)
+[2026-07-07 09:33:21] Pulling latest from remote...
+[2026-07-07 09:33:26] Pull OK (exit: 0)
+[2026-07-07 09:33:26] Fetching daily problem via Python...
+[2026-07-07 09:33:28] Fetch exit: 0
+[2026-07-07 09:33:28] Today: [3754]  (Easy)
+[2026-07-07 09:33:28] Fetch OK
+[2026-07-07 09:33:28] Starting Claude Code...
+[2026-07-07] Solved #3754 Concatenate Non-Zero Digits and Multiply by Sum I (Easy) - String Iteration + Digit Accumulation
+[2026-07-07] WARNING: Bash not available - git commit/push must be done manually
+[2026-07-07] ACTION: git add "leetcode/2026/07/3754_concatenate-non-zero-digits-and-multiply-by-sum-i/" && git commit -m "feat: 自动完成 LeetCode Concatenate Non-Zero Digits and Multiply by Sum I - 2026-07-07" && git push origin master
