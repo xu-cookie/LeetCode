@@ -371,3 +371,58 @@
 [2026-07-08 20:51:28] Today: [3756]  (Medium)
 [2026-07-08 20:51:28] Fetch OK
 [2026-07-08 20:51:28] Starting Claude Code...
+[2026-07-08 20:53:09] Claude exit code: 0
+[2026-07-08 20:53:09] SUCCESS
+[2026-07-08 20:53:15] PUSH OK
+[2026-07-08 20:53:15] === Daily task ended ===
+[2026-07-09 15:31:24] === Daily task started ===
+[2026-07-09 15:31:24] Random delay: 5780s
+[2026-07-09 15:31:25] === Daily task started ===
+[2026-07-09 15:31:25] SKIP: Already running (lock age: 0min)
+[2026-07-09 17:07:42] Pulling latest from remote...
+[2026-07-09 17:07:48] Pull OK (exit: 0)
+[2026-07-09 17:07:48] Fetching daily problem via Python...
+[2026-07-09 17:07:50] Fetch exit: 0
+[2026-07-09 17:07:50] Today: [3532]  (Medium)
+[2026-07-09 17:07:50] Fetch OK
+[2026-07-09 17:07:50] Starting Claude Code...
+[2026-07-09] Solved #3532 Path Existence Queries in a Graph I (Medium) - Contiguous Component Labeling (O(n+q))
+[2026-07-09 17:09:57] Claude exit code: 0
+[2026-07-09 17:09:57] SUCCESS
+[2026-07-09 17:10:01] PUSH OK
+[2026-07-09 17:10:01] === Daily task ended ===
+[2026-07-09 23:00:22] === Daily task started ===
+[2026-07-09 23:00:23] SKIP: Already committed today -> 8a1a5ae feat: 鑷姩瀹屾垚 LeetCode Path Existence Queries in a Graph I - 2026-07-09
+[2026-07-09 23:00:25] === Daily task started ===
+[2026-07-09 23:00:25] SKIP: Already committed today -> 8a1a5ae feat: 鑷姩瀹屾垚 LeetCode Path Existence Queries in a Graph I - 2026-07-09
+[2026-07-12 20:43:01] === Daily task started ===
+[2026-07-12 20:43:02] Random delay: 694s
+[2026-07-12 20:43:03] === Daily task started ===
+[2026-07-12 20:43:03] SKIP: Already running (lock age: 0min)
+[2026-07-12 20:54:36] Pulling latest from remote...
+[2026-07-12 20:54:42] Pull OK (exit: 0)
+[2026-07-12 20:54:42] Fetching daily problem via Python...
+[2026-07-12 20:55:25] Fetch exit: 0
+[2026-07-12 20:55:25] Today: [1331]  (Easy)
+[2026-07-12 20:55:25] Fetch OK
+[2026-07-12 20:55:25] Starting Claude Code...
+[2026-07-12 20:57:52] Claude exit code: 0
+[2026-07-12 20:57:52] SUCCESS
+[2026-07-12 20:57:57] PUSH OK
+[2026-07-12 20:57:57] === Daily task ended ===
+[2026-07-13 11:09:55] === Daily task started ===
+[2026-07-13 11:09:56] Random delay: 2153s
+[2026-07-13 11:10:16] === Daily task started ===
+[2026-07-13 11:10:16] SKIP: Already running (lock age: 0min)
+[2026-07-13] ERROR: Claude agent invoked but Bash tool is not available in this context.
+[2026-07-13] Cannot fetch LeetCode daily challenge - no network/execution capabilities (only Write/Edit/Read tools available).
+[2026-07-13] today_problem.json still contains 2026-07-12 data (stale).
+[2026-07-13] ACTION REQUIRED: Manually run: python .claude/fetch_daily.py && then re-invoke Claude agent with Bash enabled.
+[2026-07-13] Solved #1291 Sequential Digits (Medium) - Generate all 45 candidates + filter by range
+[2026-07-13 11:45:41] Pulling latest from remote...
+[2026-07-13 11:45:45] Pull OK (exit: 0)
+[2026-07-13 11:45:45] Fetching daily problem via Python...
+[2026-07-13 11:46:17] Fetch exit: 0
+[2026-07-13 11:46:17] Today: [1291] 顺次数 (Medium)
+[2026-07-13 11:46:17] Fetch OK
+[2026-07-13 11:46:17] Starting Claude Code...
