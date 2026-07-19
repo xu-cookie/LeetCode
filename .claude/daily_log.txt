@@ -102,7 +102,7 @@
 [2026-06-25 11:21:02] Pull OK (exit: 0)
 [2026-06-25 11:21:02] Fetching daily problem via Python...
 [2026-06-25 11:21:04] Fetch exit: 1
-[2026-06-25 11:21:04] ERROR: Fetch failed: Fetching LeetCode daily challenge... (target date: 2026-06-25)   Trying leetcode.com...   Got today's problem from leetcode.com!  Success! Problem saved to: D:\LeetCode\.claude\today_problem.json   Problem #3737: Count Subarrays With Majority Element I   Difficulty: Medium   Slug: count-subarrays-with-majority-element-i   Source: leetcode.com  ___PROBLEM_JSON_START___ Traceback (most recent call last):   File "D:\LeetCode\.claude\fetch_daily.py", line 210, in <module>     main()   File "D:\LeetCode\.claude\fetch_daily.py", line 203, in main     print(json.dumps(problem, ensure_ascii=False)) UnicodeEncodeError: 'gbk' codec can't encode character '\u200b' in position 1674: illegal multibyte sequence
+[2026-06-25 11:21:04] ERROR: Fetch failed: Fetching LeetCode daily challenge... (target date: 2026-06-25)   Trying leetcode.com...   Got today's problem from leetcode.com!  Success! Problem saved to: D:\LeetCode\.claude\today_problem.json   Problem #3737: Count Subarrays With Majority Element I   Difficulty: Medium   Slug: count-subarrays-with-majority-element-i   Source: leetcode.com  ___PROBLEM_JSON_START___ Traceback (most recent call last):   File "D:\LeetCode\.claude\fetch_daily.py", line 210, in <module>     main()   File "D:\LeetCode\.claude\fetch_daily.py", line 203, in main     print(json.dumps(problem, ensure_ascii=False)) UnicodeEncodeError: 'gbk' codec can't encode character '​' in position 1674: illegal multibyte sequence
 [2026-06-25 12:06:47] === Daily task started ===
 [2026-06-25 12:06:47] Random delay: 6772s
 [2026-06-25 12:06:48] === Daily task started ===
@@ -111,7 +111,7 @@
 [2026-06-25 13:59:45] Pull OK (exit: 0)
 [2026-06-25 13:59:45] Fetching daily problem via Python...
 [2026-06-25 13:59:47] Fetch exit: 1
-[2026-06-25 13:59:47] ERROR: Fetch failed: Fetching LeetCode daily challenge... (target date: 2026-06-25)   Trying leetcode.com...   Got today's problem from leetcode.com!  Success! Problem saved to: D:\LeetCode\.claude\today_problem.json   Problem #3737: Count Subarrays With Majority Element I   Difficulty: Medium   Slug: count-subarrays-with-majority-element-i   Source: leetcode.com  ___PROBLEM_JSON_START___ Traceback (most recent call last):   File "D:\LeetCode\.claude\fetch_daily.py", line 210, in <module>     main()   File "D:\LeetCode\.claude\fetch_daily.py", line 203, in main     print(json.dumps(problem, ensure_ascii=False)) UnicodeEncodeError: 'gbk' codec can't encode character '\u200b' in position 1674: illegal multibyte sequence
+[2026-06-25 13:59:47] ERROR: Fetch failed: Fetching LeetCode daily challenge... (target date: 2026-06-25)   Trying leetcode.com...   Got today's problem from leetcode.com!  Success! Problem saved to: D:\LeetCode\.claude\today_problem.json   Problem #3737: Count Subarrays With Majority Element I   Difficulty: Medium   Slug: count-subarrays-with-majority-element-i   Source: leetcode.com  ___PROBLEM_JSON_START___ Traceback (most recent call last):   File "D:\LeetCode\.claude\fetch_daily.py", line 210, in <module>     main()   File "D:\LeetCode\.claude\fetch_daily.py", line 203, in main     print(json.dumps(problem, ensure_ascii=False)) UnicodeEncodeError: 'gbk' codec can't encode character '​' in position 1674: illegal multibyte sequence
 [2026-06-26 15:40:22] === Daily task started ===
 [2026-06-26 15:40:23] Random delay: 3250s
 [2026-06-26 15:40:25] === Daily task started ===
@@ -120,7 +120,7 @@
 [2026-06-26 16:34:38] Pull OK (exit: 0)
 [2026-06-26 16:34:38] Fetching daily problem via Python...
 [2026-06-26 16:34:40] Fetch exit: 1
-[2026-06-26 16:34:40] ERROR: Fetch failed: Fetching LeetCode daily challenge... (target date: 2026-06-26)   Trying leetcode.com...   Got today's problem from leetcode.com!  Success! Problem saved to: D:\LeetCode\.claude\today_problem.json   Problem #3739: Count Subarrays With Majority Element II   Difficulty: Hard   Slug: count-subarrays-with-majority-element-ii   Source: leetcode.com  ___PROBLEM_JSON_START___ Traceback (most recent call last):   File "D:\LeetCode\.claude\fetch_daily.py", line 210, in <module>     main()   File "D:\LeetCode\.claude\fetch_daily.py", line 203, in main     print(json.dumps(problem, ensure_ascii=False)) UnicodeEncodeError: 'gbk' codec can't encode character '\u200b' in position 1657: illegal multibyte sequence
+[2026-06-26 16:34:40] ERROR: Fetch failed: Fetching LeetCode daily challenge... (target date: 2026-06-26)   Trying leetcode.com...   Got today's problem from leetcode.com!  Success! Problem saved to: D:\LeetCode\.claude\today_problem.json   Problem #3739: Count Subarrays With Majority Element II   Difficulty: Hard   Slug: count-subarrays-with-majority-element-ii   Source: leetcode.com  ___PROBLEM_JSON_START___ Traceback (most recent call last):   File "D:\LeetCode\.claude\fetch_daily.py", line 210, in <module>     main()   File "D:\LeetCode\.claude\fetch_daily.py", line 203, in main     print(json.dumps(problem, ensure_ascii=False)) UnicodeEncodeError: 'gbk' codec can't encode character '​' in position 1657: illegal multibyte sequence
 [2026-06-26 21:20:35] === Daily task started ===
 [2026-06-26 21:20:35] Random delay: 4543s
 [2026-06-26 21:20:36] === Daily task started ===
@@ -129,7 +129,7 @@
 [2026-06-26 22:36:26] Pull OK (exit: 0)
 [2026-06-26 22:36:26] Fetching daily problem via Python...
 [2026-06-26 22:36:28] Fetch exit: 1
-[2026-06-26 22:36:28] ERROR: Fetch failed: Fetching LeetCode daily challenge... (target date: 2026-06-26)   Trying leetcode.com...   Got today's problem from leetcode.com!  Success! Problem saved to: D:\LeetCode\.claude\today_problem.json   Problem #3739: Count Subarrays With Majority Element II   Difficulty: Hard   Slug: count-subarrays-with-majority-element-ii   Source: leetcode.com  ___PROBLEM_JSON_START___ Traceback (most recent call last):   File "D:\LeetCode\.claude\fetch_daily.py", line 210, in <module>     main()   File "D:\LeetCode\.claude\fetch_daily.py", line 203, in main     print(json.dumps(problem, ensure_ascii=False)) UnicodeEncodeError: 'gbk' codec can't encode character '\u200b' in position 1657: illegal multibyte sequence
+[2026-06-26 22:36:28] ERROR: Fetch failed: Fetching LeetCode daily challenge... (target date: 2026-06-26)   Trying leetcode.com...   Got today's problem from leetcode.com!  Success! Problem saved to: D:\LeetCode\.claude\today_problem.json   Problem #3739: Count Subarrays With Majority Element II   Difficulty: Hard   Slug: count-subarrays-with-majority-element-ii   Source: leetcode.com  ___PROBLEM_JSON_START___ Traceback (most recent call last):   File "D:\LeetCode\.claude\fetch_daily.py", line 210, in <module>     main()   File "D:\LeetCode\.claude\fetch_daily.py", line 203, in main     print(json.dumps(problem, ensure_ascii=False)) UnicodeEncodeError: 'gbk' codec can't encode character '​' in position 1657: illegal multibyte sequence
 [2026-06-27 21:20:31] === Daily task started ===
 [2026-06-27 21:20:32] === Daily task started ===
 [2026-06-27 21:20:32] SKIP: Already running (lock age: 0min)
@@ -555,3 +555,28 @@
 [2026-07-19] today_problem.json still contains 2026-07-18 data (stale).
 [2026-07-19] Scheduler lock file exists - main workflow is still in progress (delay: 4577s, will wake ~20:23).
 [2026-07-19] Exiting. Scheduler will re-invoke with full tools when fetch completes.
+[2026-07-19 20:23:05] Pulling latest from remote...
+[2026-07-19 20:23:09] Pull OK (exit: 0)
+[2026-07-19 20:23:09] Fetching daily problem via Python...
+[2026-07-19 20:23:52] Fetch exit: 0
+[2026-07-19 20:23:52] Today: [1081]  (Medium)
+[2026-07-19 20:23:52] Fetch OK
+[2026-07-19 20:23:52] Starting Claude Code...
+[2026-07-19 20:25:55] Claude exit code: 0
+[2026-07-19 20:25:55] SUCCESS
+[2026-07-19 20:25:59] PUSH OK
+[2026-07-19 20:25:59] === Daily task ended ===
+[2026-07-20 02:39:30] === Daily task started ===
+[2026-07-20 02:39:31] Random delay: 3870s
+[2026-07-20 02:39:31] === Daily task started ===
+[2026-07-20 02:39:31] SKIP: Already running (lock age: 0min)
+[2026-07-20 03:44:01] Pulling latest from remote...
+[2026-07-20 03:44:06] Pull OK (exit: 0)
+[2026-07-20 03:44:06] Fetching daily problem via Python...
+[2026-07-20 03:44:54] Fetch exit: 0
+[2026-07-20 03:44:54] Today: [1260] 二维网格迁移 (Easy)
+[2026-07-20 03:44:54] Fetch OK
+[2026-07-20 03:44:54] Starting Claude Code...
+[2026-07-20] Solved #1260 Shift 2D Grid (Easy) - 1D Flattening + Index Mapping: element at (i,j) moves to ((i*n+j+k)%(m*n))/n, ((i*n+j+k)%(m*n))%n
+[2026-07-20] WARNING: Bash not available - git commit/push must be done manually
+[2026-07-20] ACTION: git add "leetcode/2026/07/1260_shift-2d-grid/" && git commit -m "feat: 自动完成 LeetCode Shift 2D Grid - 2026-07-20" && git push origin master
